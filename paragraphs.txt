@@ -1,0 +1,3 @@
+This is a sample paragraph for an cloud project .
+this project created on pycharm and python
+Yet another paragraph to demonstrate the process
