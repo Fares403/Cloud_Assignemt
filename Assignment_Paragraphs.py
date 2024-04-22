@@ -1,18 +1,20 @@
-#File path
+import nltk
+from nltk.corpus import stopwords
+
+# Download NLTK stopwords dataset if not already downloaded
+nltk.download('stopwords')
+
+# File path
 file_path = "paragraphs.txt"
-# Read the contents of the text file
-with open(file_path, "r") as file:
-    paragraphs = file.readlines()
-    # Remove whitespace and newline characters
-    paragraphs = [paragraph.strip() for paragraph in paragraphs]
-# Define stop words
-stop_words = ["a", "an", "the", "in", "on", "at", "to", "and", "is", "it" , "." , ",", ":"]
 
 # Read the contents of the text file
 with open(file_path, "r") as file:
     paragraphs = file.readlines()
     # Remove whitespace and newline characters
     paragraphs = [paragraph.strip() for paragraph in paragraphs]
+
+# Get NLTK English stop words
+stop_words = set(stopwords.words('english'))
 
 print("Original paragraphs:")
 for paragraph in paragraphs:
@@ -44,6 +46,7 @@ for paragraph in filtered_paragraphs:
 print("\nWord counts:")
 for word, count in word_counts.items():
     print(f"{word}: {count}")
+
 # File path for the new text file
 new_file_path = "filtered_word_counts_in_paragraph.txt"
 
